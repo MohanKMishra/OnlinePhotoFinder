@@ -1,26 +1,21 @@
 import React from 'react'
-// import PropTypes from 'prop-types';
-// import { GridList, GridTitle } from "material-ui/GridList";
-import { Dialog, IconButton, makeStyles } from '@material-ui/core';
-// import ZoomIn from "material-ui/svg-icons/action/zoom-in";
-// import FlatButton from "material-ui/FlatButton";
+import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
     size: {
         width: 300,
         height: 500,
-        objectFit:"cover"
+        objectFit: "cover"
     },
     wrapper: {
-        margin:'30px 60px',
+        margin: '30px 60px',
         display: 'flex',
-        justifyContent:'space-between',
+        justifyContent: 'space-between',
         flexWrap: 'wrap'
     }
 })
 
 function ImageResult({ images }) {
-    let imageListContent;
     const photo = images;
     const classes = useStyles();
     return (
@@ -29,7 +24,7 @@ function ImageResult({ images }) {
                 photo.map((i) => {
                     return (
                         <div key={i.id}>
-                            <img src={i.largeImageURL} className={classes.size} />
+                            <img src={i.largeImageURL} className={classes.size} alt="not found" />
                             {/* <p>{i.tags}</p> */}
                         </div>
                     )
@@ -39,9 +34,6 @@ function ImageResult({ images }) {
     )
 }
 
-// ImageResult.PropTypes = {
-//      images: PropTypes.array.isRequired
-// }
 
 export default ImageResult;
 
